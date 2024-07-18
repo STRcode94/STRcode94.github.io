@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>บันทึกข้อมูล Discord</title>
+</head>
+<body>
+    <h2>กรอกข้อมูล Discord</h2>
+    <form id="discordForm">
+        <label for="ip">IP Address:</label><br>
+        <input type="text" id="ip" name="ip"><br><br>
+        
+        <label for="discordName">Discord Name:</label><br>
+        <input type="text" id="discordName" name="discordName"><br><br>
+        
+        <label for="discordId">Discord ID:</label><br>
+        <input type="text" id="discordId" name="discordId"><br><br>
+        
+        <button type="submit">บันทึกข้อมูล</button>
+    </form>
+
+    <script>
+        document.getElementById('discordForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const formData = new FormData(this);
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+            console.log(data); // นี่คือตัวอย่างการแสดงข้อมูลที่รับเข้ามา
+            // สามารถส่งข้อมูลนี้ไปที่ที่เก็บข้อมูลของคุณได้ เช่น การส่งไปยังเซิร์ฟเวอร์หรือ API
+        });
+    </script>
+</body>
+</html>
