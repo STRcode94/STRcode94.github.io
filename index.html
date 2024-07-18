@@ -3,33 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>บันทึกข้อมูล Discord</title>
+    <title>Add Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
-    <h2>กรอกข้อมูล Discord</h2>
-    <form id="discordForm">
-        <label for="ip">IP Address:</label><br>
-        <input type="text" id="ip" name="ip"><br><br>
-        
-        <label for="discordName">Discord Name:</label><br>
-        <input type="text" id="discordName" name="discordName"><br><br>
-        
-        <label for="discordId">Discord ID:</label><br>
-        <input type="text" id="discordId" name="discordId"><br><br>
-        
-        <button type="submit">บันทึกข้อมูล</button>
+    <h2>Add Data</h2>
+    <form id="dataForm">
+        <div class="form-group">
+            <label for="ip">IP:</label>
+            <input type="text" id="ip" name="ip" value="127.0.0.1" readonly>
+        </div>
+        <div class="form-group">
+            <label for="discordId">Discord ID:</label>
+            <input type="text" id="discordId" name="discordId" value="123456789012345678" readonly>
+        </div>
+        <div class="form-group">
+            <label for="discordName">Discord Name:</label>
+            <input type="text" id="discordName" name="discordName" value="Example Discord Name" readonly>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Submit">
+        </div>
     </form>
 
     <script>
-        document.getElementById('discordForm').addEventListener('submit', function(event) {
+        document.getElementById('dataForm').addEventListener('submit', function(event) {
             event.preventDefault();
-            const formData = new FormData(this);
-            const data = {};
-            formData.forEach((value, key) => {
-                data[key] = value;
-            });
-            console.log(data); // นี่คือตัวอย่างการแสดงข้อมูลที่รับเข้ามา
-            // สามารถส่งข้อมูลนี้ไปที่ที่เก็บข้อมูลของคุณได้ เช่น การส่งไปยังเซิร์ฟเวอร์หรือ API
+            alert('Data submission disabled in this example.');
         });
     </script>
 </body>
